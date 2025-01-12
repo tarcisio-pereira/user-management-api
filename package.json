@@ -4,7 +4,7 @@
   "description": "Desafio Full Cycle CI",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
