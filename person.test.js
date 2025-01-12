@@ -7,9 +7,9 @@ describe("Person class", () => {
   });
 });
 
-describe("Person class", () => {
+describe("Person3 class", () => {
   test("should create a person instance with the given name", () => {
     const person = new Person("Carlos");
-    expect(person.name).toBe("Carlos");
+    expect(person.name).toBe("Call");
   });
 });
