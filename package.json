@@ -1,0 +1,25 @@
+{
+  "name": "full-cycle-ci",
+  "version": "1.0.0",
+  "description": "Desafio Full Cycle CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarcisio-pereira/full-cycle-ci.git"
+  },
+  "author": "Tarcíso Pereira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarcisio-pereira/full-cycle-ci/issues"
+  },
+  "homepage": "https://github.com/tarcisio-pereira/full-cycle-ci#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
