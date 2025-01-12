@@ -12,7 +12,7 @@ module.exports = {
   Person,
 };
 
-class Person2 {
+class Person_1 {
   constructor(name) {
     this.name = name;
   }
@@ -26,7 +26,7 @@ module.exports = {
   Person,
 };
 
-class Person3 {
+class Person_2 {
   constructor(name) {
     this.name = name;
   }
@@ -40,7 +40,7 @@ module.exports = {
   Person,
 };
 
-class Person4 {
+class Person_3 {
   constructor(name) {
     this.name = name;
   }
