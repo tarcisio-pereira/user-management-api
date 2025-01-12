@@ -16,9 +16,7 @@ Execute os testes
 
 Execute o SonarCloud
 
-Suba essa aplicação para um repositório público no Github e ative o status check para que seja possível dar o
-
-merge apenas se a aplicação passar na pipeline de CI e também se a aplicação passar no quality gate do SonarCloud.
+Suba essa aplicação para um repositório público no Github e ative o status check para que seja possível dar o merge apenas se a aplicação passar na pipeline de CI e também se a aplicação passar no quality gate do SonarCloud.
 
 Crie uma Pull Request (PR) realizando todo o processo.
 
