@@ -12,6 +12,8 @@ Link da tarefa:(Insira o link da tarefa relacionada aqui)
 - [ ] Nova funcionalidade
 - [ ] Melhoria
 - [ ] Refatoração de código
+- [ ] Documentação
+- [ ] Configuração
 - [ ] Outro (descreva)
 
 ### Como testar
