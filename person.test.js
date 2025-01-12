@@ -13,3 +13,10 @@ describe("Person class", () => {
     expect(person.name).toBe("Carlos");
   });
 });
+
+describe("Person class", () => {
+  test("should create a person instance with the given name", () => {
+    const person = new Person("Pedro");
+    expect(person.name).toBe("Carlos");
+  });
+});
