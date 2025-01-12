@@ -1,6 +1,6 @@
 # full-cycle-ci
 
-Desafio Full Cycle CI 
+Desafio Full Cycle CI
 
 Nesse desafio, iremos consolidar os conhecimentos em relação a criação de uma pipeline de CI realizando os seguintes passos.
 
