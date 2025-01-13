@@ -10,17 +10,15 @@ jobs:
     name: SonarQube
     runs-on: ubuntu-latest
     steps:
-    # Checkout do código
-    - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-     # Instalar dependências usando Yar
+      # Checkout do código
+      - uses: actions/checkout@v4
+      # Instalar dependências usando Yar
       - name: Install dependencies
         run: yarn
-     # Rodar testes e gerar cobertura
+      # Rodar testes e gerar cobertura
       - name: Test and coverage
         run: yarn jest --coverage
-     # Rodar a análise no SonarQube
+      # Rodar a análise no SonarQube
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
