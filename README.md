@@ -21,3 +21,10 @@ Suba essa aplicação para um repositório público no Github e ative o status c
 Crie uma Pull Request (PR) realizando todo o processo.
 
 Informe o link da PR abaixo para que possamos corrigir.
+
+
+Cursos: Curso de Node.js Para Completos Iniciantes 
+Link: https://www.youtube.com/watch?v=IOfDoyP1Aq0
+
+Comandos
+´npm run start:dev´
