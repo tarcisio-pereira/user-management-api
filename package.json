@@ -7,8 +7,6 @@
     "test": "jest --coverage",
     "start:dev": "nodemon index.js"
   },
-
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tarcisio-pereira/full-cycle-ci.git"
