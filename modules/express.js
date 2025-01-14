@@ -25,7 +25,6 @@ app.get("/users", async (req, res) => {
 app.get("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
-
     const users = await UserModel.findById(id);
     res.status(200).json(users);
   } catch (error) {
@@ -38,6 +37,19 @@ app.post("/users", async (req, res) => {
     const users = await UserModel.create(req.body);
 
     res.status(201).json(users);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+app.patch("/users/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const user = await UserModel.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).send(error.message);
   }
