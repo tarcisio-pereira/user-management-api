@@ -55,6 +55,18 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
+app.delete("/users/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const users = await UserModel.findByIdAndDelete(id);
+
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 const port = 8080;
 
 app.listen(port, () =>
