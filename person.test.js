@@ -6,17 +6,3 @@ describe("Person class", () => {
     expect(person.name).toBe("Tarcísio");
   });
 });
-
-describe("Person_1 class", () => {
-  test("2. should create a person instance with the given name", () => {
-    const person = new Person("Carlos");
-    expect(person.name).toBe("Carlos");
-  });
-});
-
-describe("Person_2 class", () => {
-  test("3. should create a person instance with the given name", () => {
-    const person = new Person("Pedro");
-    expect(person.name).toBe("Pedro");
-  });
-});
