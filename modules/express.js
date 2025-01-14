@@ -6,6 +6,15 @@ const app = express();
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log(`\nResquest type: ${req.method}`);
+  console.log(`Resquest type: ${req.headers["content-type"]}`);
+  console.log(`Date: ${new Date()}`);
+  console.log(req.body);
+
+  next();
+});
+
 app.get("/home", (req, res) => {
   res.contentType("application/html");
   res.status(200);
