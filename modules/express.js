@@ -11,7 +11,6 @@ app.use((req, res, next) => {
   console.log(`Resquest type: ${req.headers["content-type"]}`);
   console.log(`Date: ${new Date()}`);
   console.log(req.body);
-
   next();
 });
 
