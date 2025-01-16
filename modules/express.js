@@ -21,34 +21,13 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
-/**
- * @swagger
- * /users/home:
- *   get:
- *     summary:
- *     description: Fetches all users from the database.
- *     responses:
- *       200:
- *         description: A JSON array of user objects.
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: string
- *                     description: The user ID.
- *                   name:
- *                     type: string
- *                     description: The user's name.
- *                   email:
- *                     type: string
- *                     description: The user's email address.
- *       500:
- *         description: Server error.
- */
+app.use((req, res, next) => {
+  console.log(`\nResquest type: ${req.method}`);
+  console.log(`Resquest type: ${req.headers["content-type"]}`);
+  console.log(`Date: ${new Date()}`);
+  console.log(req.body);
+  next();
+});
 
 app.get("/home", (req, res) => {
   res.contentType("application/html");
@@ -108,7 +87,7 @@ app.get("/users", async (req, res) => {
  *     summary: Get the list of users by id
  *     description: Fetches a list of users from the database with optional pagination.
  *     parameters:
- *       - in: query
+ *       - in: path
  *         name: id
  *         schema:
  *           type: integer
@@ -216,44 +195,12 @@ app.post("/users", async (req, res) => {
 
 /**
  * @swagger
- * /users/{id}:
- *   get:
- *     summary: list of users by id
- *     description:
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: integer
- *           required: true
- *         description: The unique identifier for the created user.
- *     responses:
- *       200:
- *         description: A paginated list of user objects.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 users:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       id:
- *                         type: string
- *                         description: The user ID.
- *                       name:
- *                         type: string
- *                         description: The user's name.
- *                       email:
- *                         type: string
- *                         description: The user's email.
- *                       password:
- *                         type: string
- *                         description: The user's email.
- *       500:
+ *  /users/{id}:
+ *    patch:
+ *      description:
+ *      response:
+ *        200:
+ *        500:
  *         description: Server error.
  */
 
