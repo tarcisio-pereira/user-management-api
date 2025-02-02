@@ -25,11 +25,11 @@ jobs:
 
   call-workflow:
     needs: check-application
-    uses: .github/workflows/lint.yml # Chama o workflow de Lint
+    uses: .github/workflows/lint.yml@main # Chama o workflow de Lint
 
   call-workflow-passing-data:
     needs: check-application
-    uses: .github/workflows/sonar.yml
+    uses: .github/workflows/sonar.yml@main
     with:
       config-path: .github/sonar.yml
     secrets:
