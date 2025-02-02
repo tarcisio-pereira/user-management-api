@@ -23,12 +23,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --coverage
 
+  sonarqube:
+    needs: check-application
+    uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
+    secrets: inherit
+
   # lint:
   #   needs: check-application
   #   uses: tarcisio-pereira/user-management-api/actions/workflows/lint.yml@main # Chama o workflow de Lint
   #   secrets: inherit
-
-  sonarqube:
-    needs: lint
-    uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
-    secrets: inherit
