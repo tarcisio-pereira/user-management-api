@@ -1,8 +1,7 @@
 name: Sonar
 on:
-  push:
-    branches:
-      - main
+    workflow_call: # Permite que este workflow seja chamado por outro
+
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
