@@ -1,8 +1,11 @@
 # User Management API
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/seu-usuario/user-management-api/node.js.yml?branch=main)](https://github.com/tarcisio-pereira/user-management-api/actions)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=seu-usuario_user-management-api&metric=coverage)](https://sonarcloud.io/summary/new_code?id=seu-usuario_user-management-api)
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=seu-usuario_user-management-api&metric=alert_status)](https://sonarcloud.io/code?id=tarcisio-pereira_full-cycle-ci)
+[![CI workflow](https://github.com/tarcisio-pereira/user-management-api/blob/main/.github/workflows/ci.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tarcisio-pereira_full-cycle-ci&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tarcisio-pereira_full-cycle-ci)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tarcisio-pereira_full-cycle-ci&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tarcisio-pereira_full-cycle-ci)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tarcisio-pereira_full-cycle-ci&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tarcisio-pereira_full-cycle-ci)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=tarcisio-pereira_full-cycle-ci&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=tarcisio-pereira_full-cycle-ci)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=tarcisio-pereira_full-cycle-ci&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=tarcisio-pereira_full-cycle-ci)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 API completa para gestão de usuários com autenticação JWT, desenvolvida em Node.js + Express. Inclui:
