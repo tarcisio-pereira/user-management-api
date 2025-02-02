@@ -25,10 +25,10 @@ jobs:
 
   lint:
     needs: check-application
-    uses: ./.github/workflows/lint.yml@main # Chama o workflow de Lint
+    uses: tarcisio-pereira/user-management-api/actions/workflows/lint.yml@main # Chama o workflow de Lint
     secrets: inherit
 
   sonarqube:
     needs: check-application
-    uses: ./.github/workflows/sonar.yml@main
+    uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
     secrets: inherit

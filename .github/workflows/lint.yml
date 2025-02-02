@@ -9,7 +9,7 @@ on:
 jobs:
   lint:
     build:
-      name: Lint
+      name: lint
       runs-on: ubuntu-latest
       permissions:
         contents: read
