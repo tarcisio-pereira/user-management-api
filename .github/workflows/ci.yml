@@ -23,14 +23,10 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --coverage
 
-  call-workflow-passing-data:
-    uses: tarcisio-pereira/user-management-api/actions/workflows/lint.yml@main
-    with:
-      config-path: .github/lint.yml
-    secrets: inherit
+  lint:
+    needs: checkout # Depende do job "checkout"
+    uses: ./.github/workflows/lint.yml # Chama o workflow de Lint
 
-  call-workflow-passing-data:
-    uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
-    with:
-      config-path: .github/sonar.yml
-    secrets: inherit
+  sonar:
+    needs: lint # Depende do job "lint"
+    uses: ./.github/workflows/sonar.yml # Chama o workflow de Sonar
