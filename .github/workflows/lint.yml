@@ -1,4 +1,4 @@
-name: Lint
+name: Super Lint Test
 
 on:
   workflow_call: # Permite que este workflow seja chamado por outro
