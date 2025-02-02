@@ -23,14 +23,13 @@ jobs:
       - name: SonarQube
         uses: SonarSource/sonarqube-scan-action@v4
         with:
-          projectBaseDir: app/src
           args: >
             -Dsonar.organization=tarcisio-pereira
             -Dsonar.projectKey=tarcisio-pereira_full-cycle-ci
             -Dsonar.Javascript.lcov.reportPaths=./coverage.lcov.info
             -Dsonar.sources=src/
             -Dsonar.tests=tests/
-            -Dsonar.test.exclusions=*.xml, *.html, *.htm, *.css, *.yml 
+            -Dsonar.test.exclusions=*.xml, *.html, *.htm, *.css, *.yml
             -Dsonar.verbose=true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
