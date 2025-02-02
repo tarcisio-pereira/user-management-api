@@ -22,6 +22,7 @@ jobs:
       - run: npm test --coverage
 
   sonarqube:
+    needs: check-application
     runs-on: ubuntu-latest
     steps:
       # Checkout do código
