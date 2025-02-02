@@ -4,34 +4,34 @@ on:
   pull_request:
     branches: ["main"]
 jobs:
-    check-application:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22.13.0
-            cache: "npm"
-        - run: npm ci
-        - run: npm run build --if-present
-        - run: npm test --coverage
-    sonar-Scanner:
-      needs: check-application
-      runs-on: ubuntu-latest
-      steps:
-         - name: SonarQube
-           uses: SonarSource/sonarqube-scan-action@v4
-           with:
-              projectBaseDir: app/src
-              args: >
-                -Dsonar.organization=tarcisio-pereira
-                -Dsonar.projectKey=tarcisio-pereira_full-cycle-ci
-                -Dsonar.Javascript.lcov.reportPaths=./coverage.lcov.info
-                -Dsonar.sources=src
-                -Dsonar.tests=tests/
-                -Dsonar.test.exclusions=*.xml, *.html, *.htm, *.css, *.yml 
-                -Dsonar.verbose=true
-           env:
-             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
-             SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}} # Token do SonarCloud (para autenticação na plataforma)
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test --coverage
+  sonar-Scanner:
+    needs: check-application
+    runs-on: ubuntu-latest
+    steps:
+      - name: SonarQube
+        uses: SonarSource/sonarqube-scan-action@v4
+        with:
+          projectBaseDir: app/src
+          args: >
+            -Dsonar.organization=tarcisio-pereira
+            -Dsonar.projectKey=tarcisio-pereira_full-cycle-ci
+            -Dsonar.Javascript.lcov.reportPaths=./coverage.lcov.info
+            -Dsonar.sources=src/
+            -Dsonar.tests=tests/
+            -Dsonar.test.exclusions=*.xml, *.html, *.htm, *.css, *.yml 
+            -Dsonar.verbose=true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
+          SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}} # Token do SonarCloud (para autenticação na plataforma)
