@@ -22,3 +22,6 @@ jobs:
       steps:
          - name: SonarQube
            uses: SonarSource/sonarqube-scan-action@v4
+           env:
+             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
+             SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}} # Token do SonarCloud (para autenticação na plataforma)
