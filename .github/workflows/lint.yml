@@ -2,7 +2,10 @@ name: Lint
 
 on:
   workflow_call: # Permite que este workflow seja chamado por outro
-
+  inputs:
+    config-path:
+      required: true
+      type: string
 jobs:
   build:
     name: Lint
