@@ -23,10 +23,13 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --coverage
 
-  lint:
-    needs: checkout # Depende do job "checkout"
-    uses: ./.github/workflows/lint.yml # Chama o workflow de Lint
+  call-workflow:
+    uses: .github/workflows/lint.yml # Chama o workflow de Lint
 
-  sonar:
-    needs: lint # Depende do job "lint"
-    uses: ./.github/workflows/sonar.yml # Chama o workflow de Sonar
+  call-workflow-passing-data:
+    uses: .github/workflows/sonar.yml
+    with:
+      config-path: .github/sonar.yml
+    secrets:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
+      SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}}
