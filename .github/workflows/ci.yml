@@ -23,11 +23,25 @@ jobs:
         - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
 
-       - name: SonarQube Scan
+  sonarqube:
+    needs: check-application
+    name: SonarQube
+    runs-on: ubuntu-latest
+    steps:
+       # Checkout do código
+      - uses: actions/checkout@v4
+      # Instalar dependências usando Yar
+      - name: Install dependencies
+        run: npm
+      # Rodar testes e gerar cobertura
+      - name: Test and coverage
+        run: npm jest --coverage
+
+      - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
-          SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}}      
+          SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}} 
 
 
   # lint:
