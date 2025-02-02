@@ -1,10 +1,10 @@
-name: Sonar
+name: sonar
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_call: # Permite que este workflow seja chamado por outro
+    inputs:
+      environment:
+        required: true
+        type: string
 jobs:
   sonarqube:
     name: SonarQube

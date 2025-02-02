@@ -1,8 +1,11 @@
 name: Lint
 
 on:
-  pull_request:
-    branches: ["main"]
+  workflow_call: # Permite que este workflow seja chamado por outro
+  inputs:
+    environment:
+      required: true
+      type: string
 jobs:
   build:
     name: Lint
