@@ -23,15 +23,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --coverage
 
-  call-workflow:
+  lint:
     needs: check-application
     uses: .github/workflows/lint.yml@main # Chama o workflow de Lint
+    secrets: inherit
 
-  call-workflow-passing-data:
+  sonarqube:
     needs: check-application
     uses: ./.github/workflows/sonar.yml@main
-    with:
-      config-path: ./.github/sonar.yml
-    secrets:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Token do GitHub (para acessar a API do GitHub)
-      SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}}
+    secrets: inherit
