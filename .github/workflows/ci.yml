@@ -29,6 +29,6 @@ jobs:
     secrets: inherit
 
   sonarqube:
-    needs: check-application
+    needs: lint
     uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
     secrets: inherit
