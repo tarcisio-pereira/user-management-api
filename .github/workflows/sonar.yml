@@ -1,10 +1,7 @@
 name: Sonar
 on:
   workflow_call: # Permite que este workflow seja chamado por outro
-    inputs:
-      config-path:
-        required: true
-        type: string
+
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
