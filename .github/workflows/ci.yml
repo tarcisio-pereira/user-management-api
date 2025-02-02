@@ -25,15 +25,8 @@ jobs:
     needs: check-application
     runs-on: ubuntu-latest
     steps:
-      # # Checkout do código
-      # - uses: actions/checkout@v4
-      # # Instalar dependências usando Yar
-      # - name: Install dependencies
-      #   run: yarn
-      # # Rodar testes e gerar cobertura
-      # - name: Test and coverage
-      #   run: yarn jest --coverage
-      # Rodar a análise no SonarQube
+      # Checkout do código
+      - uses: actions/checkout@v4
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
