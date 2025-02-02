@@ -1,13 +1,6 @@
 name: Super Lint Test
 on:
   workflow_call: # Permite que este workflow seja chamado por outro
-  # workflow_dispatch:
-  # merge_group:
-  # pull_request:
-  #   types: [opened, synchronize, assigned]
-  #   branches-ignore:
-  #     - hotfix/*
-  #     - release/*
 jobs:
   lint:
     build:
