@@ -1,19 +1,14 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: CI
-run-name: NodeCI by ${{ github.actor }}
+name: CI Pipeline
+run-name: CI Pipeline by ${{ github.actor }}
 on:
   pull_request:
     branches: ["main"]
-
 jobs:
   check-application:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -22,11 +17,5 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test --coverage
-      
-  lint:
-    needs: checkout # Depende do job "checkout"
-    uses: ./.github/workflows/lint.yml # Chama o workflow de Lint
-
-  sonar:
-    needs: lint # Depende do job "lint"
-    uses: ./.github/workflows/sonar.yml # Chama o workflow de Sonar
+        - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
