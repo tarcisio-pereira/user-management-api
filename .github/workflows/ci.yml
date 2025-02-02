@@ -23,7 +23,7 @@ jobs:
 
   sonarqube:
     needs: check-application
-    uses: .actions/workflows/sonar.yml@main
+    uses: ./.actions/workflows/sonar.yml@main
     secrets: inherit
 
   # lint:
