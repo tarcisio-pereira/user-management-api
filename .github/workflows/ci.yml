@@ -28,7 +28,7 @@ jobs:
   #   uses: tarcisio-pereira/user-management-api/actions/workflows/lint.yml@main # Chama o workflow de Lint
   #   secrets: inherit
 
-  sonarqube:
-    needs: lint
-    uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
-    secrets: inherit
+  # sonarqube:
+  #   needs: lint
+  #   uses: tarcisio-pereira/user-management-api/actions/workflows/sonar.yml@main
+  #   secrets: inherit
