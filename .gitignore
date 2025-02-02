@@ -1,3 +1,4 @@
 node_modules
 coverage
 .env
+./test/home.test.js
