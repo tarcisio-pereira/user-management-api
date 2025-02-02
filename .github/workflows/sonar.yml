@@ -1,9 +1,13 @@
 name: Sonar
 on:
-    workflow_call: # Permite que este workflow seja chamado por outro
-
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_call: # Permite que este workflow seja chamado por outro
+    inputs:
+      config-path:
+        required: true
+        type: string
+  secrets:
+    personal_access_token:
+      required: true
 jobs:
   sonarqube:
     name: SonarQube
