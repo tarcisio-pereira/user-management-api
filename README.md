@@ -65,9 +65,42 @@ Executar testes específicos:
    ```bash
    npm test -- users.test.js
    ```
-(Resultados em coverage/lcov-report/index.html)
+(Resultados em `coverage/lcov-report/index.html`)
 
 
+🔄 CI/CD Pipeline
+   1. O fluxo de Integração Contínua inclui:
+   
+   2. Execução automática de testes em cada push
+   
+   3. Análise de qualidade de código no SonarCloud
+   
+   4. Verificação de cobertura mínima de 80%
+   
+   5. Validação de vulnerabilidades de segurança
+
+Arquivo de configuração: `.github/workflows/node.js.yml`
+
+
+⚙️ Configuração SonarCloud
+
+
+   1. Crie um projeto em SonarCloud
+   
+   2. Adicione o SONAR_TOKEN nas secrets do GitHub
+   
+   3. Configure `sonar-project.properties:` 
+
+```properties
+sonar.organization=seu-org
+sonar.projectKey=user-management-api
+sonar.sources=src
+sonar.tests=tests
+sonar.javascript.lcov.reportPaths=coverage/lcov.info
+```
+
+📂 Estrutura de Arquivos
+```bash
 .
 ├── src/
 │   ├── models/       # Modelos do MongoDB (User)
@@ -83,9 +116,10 @@ Executar testes específicos:
 │
 ├── .github/          # GitHub Actions
 └── jest.config.js    # Configuração do Jest
+   ```
 
 🤝 Contribuição
-Crie uma branch para sua feature (git checkout -b feature/nova-funcionalidade)
+Crie uma branch para sua feature `(git checkout -b feature/nova-funcionalidade)`
 
  - Implemente suas mudanças
 
