@@ -22,9 +22,11 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test --coverage
+      
+  lint:
+    needs: checkout # Depende do job "checkout"
+    uses: ./.github/workflows/lint.yml # Chama o workflow de Lint
 
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v4
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          SONAR_TOKEN: ${{secrets.SONARCLOUD_TOKEN}}
+  sonar:
+    needs: lint # Depende do job "lint"
+    uses: ./.github/workflows/sonar.yml # Chama o workflow de Sonar
