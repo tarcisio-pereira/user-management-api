@@ -21,22 +21,51 @@ API completa para gestão de usuários com autenticação JWT, desenvolvida em N
    ```bash
    git clone https://github.com/seu-usuario/user-management-api.git
    cd user-management-api
-   npm run start:dev
+   ```
 
 2. Instale as dependências:
    
     ```bash
-    npm run dev
+    npm install
+    ```
 
-A API estará disponível em http://localhost:3000/api
+3. Crie o arquivo .env::
 
-Variáveis de Ambiente (.env):
    ```bash
-   PORT=3000
+   PORT=8080
    JWT_SECRET=seu_secreto_aqui
    DB_CONNECTION=mongodb://localhost:27017/userdb
    NODE_ENV=development
+   ```
 
+🚀 Como Executar
+
+Modo desenvolvimento (com hot reload)
+   ```bash
+   npm run start:dev
+   ```
+Modo produção:
+   ```bash
+   npm run start
+   ```
+A API estará disponível em http://localhost:8080/api
+   
+🔍 Endpoints Principais
+
+Swagger documentation: http://localhost:8080/api-docs
+
+🧪 Testes Automatizados
+
+Executar todos os testes:
+   ```bash
+   npm test
+   ```
+
+Executar testes específicos:
+   ```bash
+   npm test -- users.test.js
+   ```
+(Resultados em coverage/lcov-report/index.html)
 
 
 .
@@ -58,13 +87,13 @@ Variáveis de Ambiente (.env):
 🤝 Contribuição
 Crie uma branch para sua feature (git checkout -b feature/nova-funcionalidade)
 
-Implemente suas mudanças
+ - Implemente suas mudanças
 
-Execute e atualize os testes (npm test)
+- Execute e atualize os testes (npm test)
 
-Faça commit seguindo o padrão Conventional Commits
+- Faça commit seguindo o padrão Conventional Commits
 
-Abra um Pull Request com descrição detalhada
+- Abra um Pull Request com descrição detalhada
 
 
 📄 Licença
@@ -72,19 +101,21 @@ Distribuído sob licença MIT.
 
 Dependências Principais:
 
-Express
+- Express
 
-Mongoose (MongoDB)
+- Mongoose (MongoDB)
 
-Jest + Supertest
+- Jest + Supertest
 
-jsonwebtoken
+- jsonwebtoken
 
-bcryptjs
+- bcryptjs
 
-SonarScanner
+- SonarScanner
 
 Scripts do package.json:
+
+```json
 {
   "dev": "nodemon src/app.js",
   "start": "node src/app.js",
@@ -93,3 +124,4 @@ Scripts do package.json:
   "test:coverage": "jest --coverage",
   "sonar": "sonar-scanner -Dsonar.projectKey=user-management-api"
 }
+```
