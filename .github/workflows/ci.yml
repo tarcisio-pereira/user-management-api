@@ -19,7 +19,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test --coverage
-      
+
   super-lint:
     needs: check-application
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Super-Linter
         uses: super-linter/super-linter@v7.1.0
-        
+
   sonar-Scanner:
     needs: check-application
     runs-on: ubuntu-latest
@@ -47,3 +47,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token do GitHub (para acessar a API do GitHub)
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }} # Token do SonarCloud (para autenticação na plataforma)
+
